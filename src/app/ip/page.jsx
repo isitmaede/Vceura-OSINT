@@ -20,20 +20,11 @@ export default function Page() {
   const [loading, setLoading] = useState(false);
   const [copied, setCopied] = useState(false);
   useEffect(() => {
-    async function MyIp() {
-      try {
-        const response = await axios.get(`/api/ip`);
-        const ip = response.data.query;
-        Setmyip(ip)
-      } catch (error) {
-        console.log(error)
-        Setmyip('bad connection')
-      }
-    }
-    MyIp()
-  }, 
-  
-  []);
+  fetch("https://api.ipify.org?format=json")
+    .then(res => res.json())
+    .then(data => Setmyip(data.ip))
+    .catch(() => Setmyip("bad connection"));
+}, []);
   const handleSearch = async () => {
     if (!ip) return;
     setLoading(true);
