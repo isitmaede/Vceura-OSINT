@@ -22,7 +22,7 @@ export default function Page() {
   useEffect(() => {
     async function MyIp() {
       try {
-        const response = await axios.post('http://ip-api.com/json/');
+        const response = await axios.get(`/api/ip`);
         const ip = response.data.query;
         Setmyip(ip)
       } catch (error) {
@@ -38,7 +38,7 @@ export default function Page() {
     if (!ip) return;
     setLoading(true);
     try {
-      const response = await axios.get(`http://ip-api.com/json/${ip}`);
+      const response = await axios.get(`/api/ip?ip=${ip}`);
       setSearchResult(response.data);
       setLoading(false);
     } catch (error) {
