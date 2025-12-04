@@ -19,7 +19,7 @@ export default function ScreenshotGenerator() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-900 text-gray-100 p-6 flex flex-col items-center">
+    <div className="min-h-screen  text-gray-100 p-6 flex flex-col items-center">
       <h1 className="text-3xl font-bold mb-2">Website Screenshot Generator</h1>
       <p className="text-gray-400 mb-6 text-center">
         Enter a website URL and see its screenshot instantly
