@@ -3,7 +3,7 @@ import axios from "axios";
 export async function GET(req) {
   try {
     const { searchParams } = new URL(req.url);
-    const ip = searchParams.get("ip") || ""; // فارغ = الـIP الحالي
+    const ip = searchParams.get("ip") || "";
     const url = ip ? `http://ip-api.com/json/${ip}` : `http://ip-api.com/json/`;
     const response = await axios.get(url);
     return new Response(JSON.stringify(response.data), {

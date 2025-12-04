@@ -6,14 +6,17 @@ import {
   ImageUp,
   UserSearch,
   Smartphone,
+  Mail,
+  Earth,
+  Wallpaper,
 } from "lucide-react";
 
 export default function MainBody() {
   const tools = [
     { id: 1, name: "IP Information", ToolLink: "/ip", icon: Locate },
-    { id: 2, name: "Image Finder", ToolLink: "/imagefinder", icon: ImageUp },
-    { id: 3, name: "Stalk Social Media", ToolLink: "/socialmedia", icon: UserSearch },
-    { id: 4, name: "PhoneNumber Info", ToolLink: "/phone", icon: Smartphone },
+    { id: 2, name: "Website ScreenShots", ToolLink: "/webshot", icon: Wallpaper },
+    { id: 3, name: "PhoneNumber Info", ToolLink: "/phone", icon: Smartphone },
+    { id: 4, name: "whois domain", ToolLink: "/whois", icon: Earth },
   ];
 
   return (
@@ -53,7 +56,9 @@ export default function MainBody() {
           );
         })}
       </div>
-      
+      <h1 className="text-center mt-10 text-gray-50 font-semibold text-2xl ">
+        more coming soon ...
+      </h1>
     </div>
   );
 }

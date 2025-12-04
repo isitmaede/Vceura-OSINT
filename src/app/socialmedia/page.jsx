@@ -30,7 +30,7 @@ export default function Page() {
       url: "https://reddit.com/r/random/comments/xxxx",
       time: "3 months ago",
       comment:
-        "I remember Naomi posting about this topic last year. Good insight.",
+        "I remember posting about this topic last year. Good insight.",
     },
     {
       platform: "Random Forum",
@@ -45,10 +45,10 @@ export default function Page() {
   // بيانات الحسابات المشتبه بها وشبكة الروابط
   const dummyNetwork = {
     nodes: [
-      { id: 1, name: "naomi.baker", platform: "Facebook", similarity: 92 },
-      { id: 2, name: "naomi_b_92", platform: "Instagram", similarity: 81 },
+      { id: 1, name: "amin.baker", platform: "Facebook", similarity: 92 },
+      { id: 2, name: "islam", platform: "Instagram", similarity: 81 },
       { id: 3, name: "n.baker", platform: "Twitter", similarity: 76 },
-      { id: 4, name: "naomiii92", platform: "TikTok", similarity: 69 },
+      { id: 4, name: "ahmed", platform: "TikTok", similarity: 69 },
     ],
     links: [
       { from: 1, to: 2 },
@@ -97,7 +97,7 @@ export default function Page() {
         </button>
       </form>
 
-      {/* LOADING */}
+     
       {loading && (
         <div className="mt-10 flex flex-col items-center">
           <Loader size={36} className="animate-spin text-blue-400" />
@@ -105,8 +105,6 @@ export default function Page() {
         </div>
       )}
 
-      {/* COMMENTS SECTION */}
-      {/* PROFILE CARD */}
 {!loading && comments && (
   <div className="mt-16 w-full max-w-xl">
     <h2 className="text-xl font-bold mb-4">Identified Public Profile</h2>
@@ -130,7 +128,7 @@ export default function Page() {
 )}
 
 
-{/* DIGITAL FOOTPRINT */}
+
 {!loading && comments && (
   <div className="mt-12 w-full max-w-xl">
     <h2 className="text-xl font-bold mb-4">Digital Footprint Analysis</h2>
@@ -155,7 +153,7 @@ export default function Page() {
 )}
 
 
-{/* CROSS-PLATFORM LINKS */}
+
 {!loading && comments && (
   <div className="mt-12 w-full max-w-xl">
     <h2 className="text-xl font-bold mb-4">Mutual Links & Matches</h2>
@@ -163,7 +161,7 @@ export default function Page() {
     <div className="space-y-3">
       <div className="p-4 bg-gray-900 border border-gray-800 rounded-xl">
         <p className="text-gray-300 font-semibold">Matched Email</p>
-        <p className="text-gray-400 text-sm">naomi.baker92@example.com</p>
+        <p className="text-gray-400 text-sm">islam.baker92@example.com</p>
       </div>
 
       <div className="p-4 bg-gray-900 border border-gray-800 rounded-xl">
@@ -180,7 +178,7 @@ export default function Page() {
 )}
 
 
-{/* RISK SCORE */}
+
 {!loading && comments && (
   <div className="mt-12 w-full max-w-xl">
     <h2 className="text-xl font-bold mb-2">Risk Score</h2>
@@ -195,7 +193,6 @@ export default function Page() {
 )}
 
 
-{/* TIMELINE */}
 {!loading && comments && (
   <div className="mt-12 w-full max-w-xl">
     <h2 className="text-xl font-bold mb-4">Public Activity Timeline</h2>
@@ -225,7 +222,7 @@ export default function Page() {
 )}
 
 
-      {/* NETWORK VISUALIZATION */}
+      
       {!loading && network && (
         <div className="mt-16 w-full max-w-xl">
           <h2 className="text-xl font-bold mb-4 flex items-center gap-2">

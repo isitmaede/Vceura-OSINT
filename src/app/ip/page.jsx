@@ -13,18 +13,18 @@ import {
 import React, { use, useEffect, useState } from "react";
 
 export default function Page() {
-  const [coptext , settext] = useState('');
+  const [coptext, settext] = useState("");
   const [myip, Setmyip] = useState("");
   const [ip, setIp] = useState("");
   const [searchResult, setSearchResult] = useState(null);
   const [loading, setLoading] = useState(false);
   const [copied, setCopied] = useState(false);
   useEffect(() => {
-  fetch("https://api.ipify.org?format=json")
-    .then(res => res.json())
-    .then(data => Setmyip(data.ip))
-    .catch(() => Setmyip("bad connection"));
-}, []);
+    fetch("https://api.ipify.org?format=json")
+      .then((res) => res.json())
+      .then((data) => Setmyip(data.ip))
+      .catch(() => Setmyip("bad connection"));
+  }, []);
   const handleSearch = async () => {
     if (!ip) return;
     setLoading(true);
@@ -37,32 +37,34 @@ export default function Page() {
       setSearchResult(null);
     }
   };
-  
+
   const handleCopy = () => {
     navigator.clipboard.writeText(myip);
     setCopied(true);
     setTimeout(() => setCopied(false), 1500);
-    setTimeout(() => settext('copied!') , 10)
+    setTimeout(() => settext("copied!"), 10);
   };
 
   return (
     <div className="flex flex-col items-center justify-center text-gray-50 p-6 ">
-      
       <div className="bg-cyan-950 py-4 px-8 rounded-3xl flex flex-col items-center gap-3 shadow-lg border border-cyan-700">
-  <h1 className="text-xl font-bold text-center text-white tracking-wide">My IP</h1>
-  <div className="flex items-center gap-4 bg-cyan-900 px-4 py-2 rounded-xl shadow-inner">
-    <p className="text-lg font-medium text-white">{myip}</p>
-    <button
-      onClick={handleCopy}
-      className="flex items-center justify-center bg-gray-50 hover:bg-gray-400 transition duration-200 p-2 rounded-lg shadow-sm"
-      title="Copy IP"
-    >
-      <Copy size={18} color="gray" />
-    </button>
-  </div>
-  <h1 className="text-emerald-500 bg-gray-950 py-1 px-3 rounded-md font-bold ">{coptext}</h1>
-</div>
-
+        <h1 className="text-xl font-bold text-center text-white tracking-wide">
+          My IP
+        </h1>
+        <div className="flex items-center gap-4 bg-cyan-900 px-4 py-2 rounded-xl shadow-inner">
+          <p className="text-lg font-medium text-white">{myip}</p>
+          <button
+            onClick={handleCopy}
+            className="flex items-center justify-center bg-gray-50 hover:bg-gray-400 transition duration-200 p-2 rounded-lg shadow-sm"
+            title="Copy IP"
+          >
+            <Copy size={18} color="gray" />
+          </button>
+        </div>
+        <h1 className="text-emerald-500 bg-gray-950 py-1 px-3 rounded-md font-bold ">
+          {coptext}
+        </h1>
+      </div>
 
       <h1 className="text-3xl font-semibold mt-6 text-center">
         IP Lookup & Information
