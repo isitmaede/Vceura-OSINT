@@ -31,7 +31,7 @@ export default function MainHeader() {
           </h1>
         </Link>
 
-        <Link href={"/"}>
+        <Link href={"/howtouse"}>
           <h1 className="hover:border-b hover:border-gray-50 cursor-pointer">
             How To Use
           </h1>
